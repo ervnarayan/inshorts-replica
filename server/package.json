@@ -1,0 +1,24 @@
+{
+  "name": "inshots-server",
+  "version": "1.0.0",
+  "description": "Inshorts Replica",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ervnarayan/inshorts-replica.git"
+  },
+  "keywords": [
+    "Inshorts",
+    "News",
+    "Article"
+  ],
+  "author": "Vivek Narayan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ervnarayan/inshorts-replica/issues"
+  },
+  "homepage": "https://github.com/ervnarayan/inshorts-replica#readme"
+}
