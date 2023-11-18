@@ -144,12 +144,14 @@ export const FEEDS = [
         "position_expire_time": "2023-11-15T05:24:59.173Z",
     }
 ];
-
+ 
 export const NAV_LINKS = [
     {'href': '/', 'label': 'Home'},
-    {'href': '/', 'label': 'About'},
-    {'href': '/', 'label': 'Categories'},
-    {'href': '/', 'label': 'News'},
-    {'href': '/', 'label': 'Article'},
-    {'href': '/', 'label': 'Contact'},
+    {'href': '/about', 'label': 'About'},
+    {'href': '/category', 'label': 'Categories'},
+    {'href': '/news', 'label': 'News'},
+    {'href': '/article', 'label': 'Articles'},
+    {'href': '/blog', 'label': 'Blog'},
+    {'href': '/business', 'label': 'Business'},
+    {'href': '/contact', 'label': 'Contact'},
 ];

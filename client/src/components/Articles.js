@@ -1,7 +1,8 @@
 import { Box } from '@mui/material';
 import Article from "./Article";
-import { FEEDS } from '../constants';
 import styled from '@emotion/styled';
+import { getFeeds } from '../service/api';
+import { useEffect, useState } from 'react';
 
 const Container = styled(Box)`
     max-width: 900px;
@@ -10,10 +11,18 @@ const Container = styled(Box)`
 `;
 
 const Articles = () => {
+  const [news, setNews ] = useState([]);
+  useEffect(()=>{
+    getNews();
+  },[]);
+  const getNews = async () => {
+    let response = await getFeeds();
+    setNews(response.data)
+  }
   return (
     <Container>
         {
-            FEEDS.map((data)=>{
+            news.map((data)=>{
               return <Article data={data} key={data.hash_id}/>
             })     
         }

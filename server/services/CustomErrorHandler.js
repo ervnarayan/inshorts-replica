@@ -1,4 +1,4 @@
-class CustomErrorHandler {
+class CustomErrorHandler extends Error{
     constructor(status, msg){
         super();
         this.status = status;

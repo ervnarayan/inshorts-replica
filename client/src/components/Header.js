@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {AppBar, Box,  Drawer, Link, List, ListItem, ListItemButton, ListItemText, Toolbar, styled} from '@mui/material';
 import { Menu } from '@mui/icons-material';
-import { NAV_LINKS } from '../constants';
+import { getMenu } from '../service/api';
 
 const HeaderBar = styled(AppBar)`
   height:70px;
@@ -29,6 +29,20 @@ const LogoLink = styled(Link)`
 `;
 
 const Header = () => {
+
+  const [nav, setNav] = useState([]);
+
+  useEffect(()=>{
+    getMenus();
+  },[])
+
+
+  const getMenus = async () => {
+    let response = await getMenu();
+    console.log(response);
+    setNav(response.data);
+  }
+
   const [toggle, setToggle] = useState(false);
   const toggleDrawer = (open) => {
     setToggle(open);
@@ -41,13 +55,16 @@ const Header = () => {
       onKeyDown={() => {toggleDrawer(false)}}
     >
       <List onClick={() => {toggleDrawer(false)}}>
-      { NAV_LINKS.map((item) => (
+
+      { nav.map((item) => (
           <ListItem key={item.label} disablePadding>
             <ListItemButton>
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
-        ))}        
+        ))}   
+
+
       </List>
     </Box>
   );
